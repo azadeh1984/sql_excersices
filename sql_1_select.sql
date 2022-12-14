@@ -24,28 +24,27 @@ SELECT * from city;
 # 3: Get everything on the cities whose district is "aceh"
 # (Hint: 2 rows)
 select * from city where District like "aceh";
--- test
 #
 # 4: Get only the name of the cities where the countrycode is "bfa"
-#
+select * from city where CountryCode like "bfa";
 #
 # 5: Get both the name and district of the cities where the countrycode is "tto"
-#
+####select t.id, t.title, p.email from task t inner join person p on t.person_id = p.id;
 #
 # 6: Get the name and district named as nm,dist from the cities where the countrycode is "arm"
 #
-#
+#############
 # 7: Get the cities with a name that starts with "bor"
-#
+select * from city where name like "bor%";
 #
 # 8: Get the cities with a name that contains the string "orto"
-#
+select * from city where Name like "%orto%";
 #
 # 9: Get the cities that has a population below 1000
-#
-#
+select * from city where Population < 1000;
+
 # 10: Get the unique countrycodes from the cities that has a population below 1000
-#
+select * from city_countrycode where  population < 1000;
 #
 # 11: Get the cities with the countrycode UKR that has more than 1000000 (one million) in population
 #
@@ -54,7 +53,7 @@ select * from city where District like "aceh";
 #
 #
 # 13: Get the cities with the countrycodes TJK, MRT, AND, PNG, SJM
-#
+#####select * from city where CountryCode = "TJK, MRT, AND, PNG, SJM"; 
 #
 # 14: Get the cities with a population between 200 and 700 inclusive
 #
