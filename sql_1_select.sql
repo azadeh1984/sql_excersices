@@ -26,14 +26,13 @@ SELECT * from city;
 select * from city where District like "aceh";
 #
 # 4: Get only the name of the cities where the countrycode is "bfa"
-select * from city where CountryCode like "bfa";
+select name from city where CountryCode like "bfa";
 #
 # 5: Get both the name and district of the cities where the countrycode is "tto"
-####select t.id, t.title, p.email from task t inner join person p on t.person_id = p.id;
-#
+select name, district from city where CountryCode = "tto";
 # 6: Get the name and district named as nm,dist from the cities where the countrycode is "arm"
+select name as nm,district as dist from city where CountryCode = "arm";
 #
-#############
 # 7: Get the cities with a name that starts with "bor"
 select * from city where name like "bor%";
 #
@@ -44,28 +43,35 @@ select * from city where Name like "%orto%";
 select * from city where Population < 1000;
 
 # 10: Get the unique countrycodes from the cities that has a population below 1000
-select * from city_countrycode where  population < 1000;
+select countrycode from city where  population < 1000;
 #
 # 11: Get the cities with the countrycode UKR that has more than 1000000 (one million) in population
-#
+select * from city where countrycode= "UKR" and Population >1000000;
+select * from city;
 #
 # 12: Get the cities with a population of below 200 or above 9500000 (9.5 million)
 #
 #
 # 13: Get the cities with the countrycodes TJK, MRT, AND, PNG, SJM
-#####select * from city where CountryCode = "TJK, MRT, AND, PNG, SJM"; 
+
+select * from city where CountryCode = "TJK" or CountryCode=" MRT" or CountryCode= "and" or countrycode="SJM" or CountryCode="png";
+-- or you can do it like this: 
+select * from city where CountryCode in ("TJK", "MRT", "and", "SJM","png");
+
 #
 # 14: Get the cities with a population between 200 and 700 inclusive
-#
+select * from city where  population BETWEEN 200 and 700;
 #
 # 15: Get the countries with a population between 8000 and 20000 inclusive
-#
+select * from country where  population BETWEEN 8000 and 20000;
 #
 # 16: Get the name of the countries with a independence year (indepyear) before year 0
+select name, indepyear from country where IndepYear < 0;
 #
 #
 # 17: Get the countries that has no recorded independence year and a population above 1000000
-#
+ select * from country;
+select * from country where IndepYear is null and Population > 1000000;
 #
 # 18: Get countries with a SurfaceArea below 10 and a defined LifeExpectancy
-#
+select * from country where SurfaceArea < 10 and LifeExpectancy is not null;
