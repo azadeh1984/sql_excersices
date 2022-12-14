@@ -24,6 +24,7 @@ SELECT * from city;
 # 3: Get everything on the cities whose district is "aceh"
 # (Hint: 2 rows)
 select * from city where District like "aceh";
+-- test
 #
 # 4: Get only the name of the cities where the countrycode is "bfa"
 #
